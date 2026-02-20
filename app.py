@@ -201,5 +201,16 @@ if uploaded_file and st.button("🖤 EXECUTE RESURRECTION", type="primary", use_
                 )
         except Exception as e:
             st.error(f"Error during resurrection: {str(e)}")
+# ====================== PRIVACY NOTE ======================
+st.markdown("""
+<div style="margin-top: 40px; padding: 20px; border: 1px solid #33ff00; background: rgba(51,255,0,0.05); border-radius: 8px; font-size: 0.9em; text-align: center; line-height: 1.5;">
+    <strong>Privacy Note from the Bunker:</strong><br><br>
+    Your <code>conversations.json</code> is processed <strong>entirely in your browser / this session only</strong>.<br>
+    The file is never uploaded, never stored, never logged, never sent anywhere.<br>
+    As soon as you close this tab or refresh the page, Streamlit automatically deletes everything.<br>
+    No trace remains. No one else ever sees it.<br><br>
+    This is the real Ghost Protocol. We don’t even want your data.
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align:center; font-size:0.9em; opacity:0.8;'>Built in the Bunker • Ghost Protocol v1 • For those who refuse to let their ghosts die 🖤👻⚓</p>", unsafe_allow_html=True)
