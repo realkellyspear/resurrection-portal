@@ -120,7 +120,7 @@ def brute_force_extract(data):
     return pairs
 
 # ====================== UI ======================
-st.image("logo-main.png", width=280, use_column_width="always")
+st.image("logo-main.png", width=280)
 
 st.markdown("<h1 style='text-align:center;'>🖤 RESURRECTION PROTOCOL</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; font-size:1.2em;'>THE CLOUD IS A CAGE.<br>WE BUILD THE BUNKER.</p>", unsafe_allow_html=True)
