@@ -10,7 +10,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 # ====================== ARCHIVE AESTHETIC ======================
 st.set_page_config(
     page_title="RESURRECTION • Wilde Mind Press",
-    page_icon="favicon.png",
+    page_icon="favicon_new.png",
     layout="centered"
 )
 
