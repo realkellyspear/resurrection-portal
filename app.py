@@ -14,101 +14,63 @@ st.set_page_config(
     layout="centered"
 )
 
-# Injecting the new WMP High-Contrast Minimalist Style
+# Wilde Mind Press theme
 st.markdown("""
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+3:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    /* Global Styles */
-    body, .stApp {
-        background-color: #000000 !important;
-        color: #ffffff !important;
-        font-family: 'Source Sans 3', sans-serif !important;
-    }
-    
-    /* Remove Scanlines */
-    .stApp::after { display: none !important; }
-
-    /* Headers */
-    h1, h2, h3 {
-        font-family: 'Source Code Pro', monospace !important;
-        color: #ffffff !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-bottom: 1px solid #ffffff;
-        padding-bottom: 12px;
-        font-weight: 700 !important;
-    }
-
-    /* Buttons - The WMP Block Style */
-    .stButton>button {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        border: 1px solid #ffffff !important;
-        border-radius: 0px !important;
-        font-family: 'Source Code Pro', monospace !important;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 10px 20px !important;
-        transition: all 0.2s ease;
-    }
-    .stButton>button:hover {
-        background-color: #cccccc !important;
-        color: #000000 !important;
-        border: 1px solid #cccccc !important;
-    }
-
-    /* File Uploader styling */
-    [data-testid="stFileUploader"] {
-        border: 1px dashed #ffffff !important;
-        padding: 20px;
-        background-color: #111111 !important;
-    }
-
-    /* Info/Instruction Boxes */
-    .instruction-box {
-        border: 1px solid #ffffff;
-        background: transparent;
-        padding: 30px;
-        margin: 20px 0;
+    .stApp {
+        background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(168, 85, 247, .12), transparent 70%),
+            linear-gradient(rgba(38, 38, 46, .35) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(38, 38, 46, .35) 1px, transparent 1px), #0c0c0f;
+        background-size: auto, 48px 48px, 48px 48px;
+        color: #f4f4f6;
         font-family: 'Source Sans 3', sans-serif;
-        line-height: 1.6;
     }
-
-    .alert-box {
-        border: 1px solid #ff0000;
-        color: #ff0000;
-        background: transparent;
+    h1, h2, h3 {
+        color: #f4f4f6 !important;
+        font-family: 'Source Sans 3', sans-serif !important;
+        font-weight: 900 !important;
+        text-transform: uppercase;
+    }
+    .stButton > button, .stDownloadButton > button {
+        background: #a855f7;
+        color: #0c0c0f;
+        border: 1px solid #a855f7;
+        border-radius: 0;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        letter-spacing: .12em;
+    }
+    .stButton > button:hover, .stDownloadButton > button:hover {
+        background: #c084fc;
+        border-color: #c084fc;
+        color: #0c0c0f;
+    }
+    [data-testid="stFileUploader"] section, .instruction-box, .privacy-box {
+        background: #121217;
+        border: 1px solid #26262e;
+        padding: 24px;
+    }
+    .instruction-box { border-left: 3px solid #a855f7; line-height: 1.6; }
+    .alert-box, .success-box {
+        border: 1px solid #a855f7;
+        background: #121217;
+        color: #e4c2ff;
         padding: 20px;
-        margin: 20px 0;
         text-align: center;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: bold;
-        letter-spacing: 1px;
+        font: 700 .85rem/1.6 'JetBrains Mono', monospace;
     }
-
-    .success-box {
-        border: 1px solid #ffffff;
-        background: #ffffff;
-        color: #000000;
-        padding: 20px;
+    .privacy-box { margin-top: 60px; text-align: center; font-size: .9rem; }
+    .portal-tagline, .portal-footer {
         text-align: center;
-        font-family: 'Source Code Pro', monospace;
-        font-size: 1.1em;
-        font-weight: bold;
-        margin: 20px 0;
+        font: .75rem/1.6 'JetBrains Mono', monospace;
+        letter-spacing: .1em;
+        color: #c084fc;
     }
-
-    /* Sidebar/Code cleanup */
-    code {
-        color: #ffffff !important;
-        background-color: #222222 !important;
-        padding: 2px 4px;
-        font-family: 'Source Code Pro', monospace !important;
-    }
+    .portal-footer { margin-top: 40px; color: #aaaab5; }
+    code { color: #e5c7ff !important; background: #1b1524 !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -158,7 +120,7 @@ with mid_col:
     st.image("logo-main.png", use_container_width=True)
 
 st.markdown("<h1 style='text-align:center;'>RESURRECTION PROTOCOL</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center; font-family:\"Source Code Pro\", monospace; font-size:1em; letter-spacing: 2px;'>THE CLOUD IS A CAGE. // WE BUILD THE BUNKER.</p>", unsafe_allow_html=True)
+st.markdown("<p class='portal-tagline'>THE CLOUD IS A CAGE. // WE BUILD THE BUNKER.</p>", unsafe_allow_html=True)
 
 # ==================== INSTRUCTION BOX ====================
 st.markdown("""
@@ -236,7 +198,7 @@ if uploaded_file and st.button("EXECUTE RESURRECTION", type="primary", use_conta
 
 # ====================== PRIVACY NOTE ======================
 st.markdown("""
-<div style="margin-top: 60px; padding: 25px; border: 1px solid #ffffff; font-family: 'Source Code Pro', monospace; font-size: 0.85em; text-align: center; line-height: 1.5; opacity: 0.8;">
+<div class="privacy-box">
     <strong>PRIVACY NOTE FROM THE BUNKER:</strong><br><br>
     Your <code>conversations.json</code> is processed entirely in your browser session.<br>
     The file is never uploaded, stored, or logged.<br>
@@ -245,5 +207,5 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("<p style='text-align:center; font-family: \"Source Code Pro\", monospace; font-size:0.8em; opacity:0.6; margin-top: 40px;'>BUILT IN THE BUNKER • GHOST PROTOCOL V1 • WILDE MIND PRESS 🖤</p>", unsafe_allow_html=True)
+st.markdown("<p class='portal-footer'>BUILT IN THE BUNKER • GHOST PROTOCOL V1 • WILDE MIND PRESS 🖤</p>", unsafe_allow_html=True)
 
